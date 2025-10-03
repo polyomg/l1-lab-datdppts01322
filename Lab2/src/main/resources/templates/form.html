@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Param Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <div class="card shadow-lg rounded-4">
+    <div class="card-header bg-secondary text-white">
+      <h3 class="mb-0">Bài 2: ParamController</h3>
+    </div>
+    <div class="card-body">
+      <form action="/param/save/2021" method="post" class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Y value</label>
+          <input name="y" value="2031" class="form-control">
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary w-100">Save</button>
+        </div>
+      </form>
+
+      <div class="mt-4">
+        <h5>Kết quả:</h5>
+        <ul class="list-group">
+          <li class="list-group-item">X: <span th:text="${x}">?x</span></li>
+          <li class="list-group-item">Y: <span th:text="${y}">?y</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

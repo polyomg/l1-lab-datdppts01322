@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính CV, DT hình chữ nhật</title>
+</head>
+<body>
+    <h2>Tính diện tích và chu vi hình chữ nhật</h2>
+    <form action="/DTvCV/tinh" method="post">
+        <label>Chiều dài:</label>
+        <input type="number" name="dai" ><br><br>
+
+        <label>Chiều rộng:</label>
+        <input type="number" name="rong"><br><br>
+
+        <button type="submit">Xác nhận</button>
+    </form>
+
+	<hr>
+    <div>
+        *Chu vi: <span th:text="${CV}"></span>
+    </div>
+    <br>
+    <div>
+        *Diện tích: <span th:text="${DT}"></span>
+    </div>
+</body>
+</html>

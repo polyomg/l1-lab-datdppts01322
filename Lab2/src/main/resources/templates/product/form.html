@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Form</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="card shadow-lg rounded-4">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Quản lý sản phẩm</h3>
+        </div>
+        <div class="card-body">
+            <!-- Form nhập -->
+            <form action="/product/save" method="post" class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Tên sản phẩm</label>
+                    <input name="name" class="form-control" placeholder="Product name">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Giá</label>
+                    <input name="price" class="form-control" placeholder="Price">
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-success w-100">Lưu sản phẩm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hiển thị dữ liệu -->
+    <div class="row mt-4">
+        <!-- p1 -->
+        <div class="col-md-4" th:if="${p1 != null}">
+            <div class="card border-info shadow-sm rounded-4">
+                <div class="card-header bg-info text-white">Sản phẩm mặc định</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Tên:</b> <span th:text="${p1.name}">?1name</span></li>
+                    <li class="list-group-item"><b>Giá:</b> <span th:text="${p1.price}">?1price</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- p2 -->
+        <div class="col-md-4" th:if="${p2 != null}">
+            <div class="card border-success shadow-sm rounded-4">
+                <div class="card-header bg-success text-white">Sản phẩm vừa nhập</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Tên:</b> <span th:text="${p2.name}">?2name</span></li>
+                    <li class="list-group-item"><b>Giá:</b> <span th:text="${p2.price}">?2price</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- items -->
+        <div class="col-md-4">
+            <div class="card border-warning shadow-sm rounded-4">
+                <div class="card-header bg-warning text-dark">Danh sách sản phẩm</div>
+                <ul class="list-group list-group-flush">
+                    <th:block th:each="item: ${items}">
+                        <li class="list-group-item">
+                            <b th:text="${item.name}"></b> - <span th:text="${item.price}"></span>
+                        </li>
+                    </th:block>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
