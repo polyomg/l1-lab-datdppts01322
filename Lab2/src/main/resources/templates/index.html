@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab2 Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <div class="card shadow-lg rounded-4">
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0">Chọn bài Lab2</h3>
+    </div>
+    <div class="card-body">
+      <div class="list-group mb-3">
+        <a href="/ctrl/ok" class="list-group-item list-group-item-action">Bài 1: OkController</a>
+        <a href="/param/form" class="list-group-item list-group-item-action">Bài 2: ParamController</a>
+        <a href="/product/form" class="list-group-item list-group-item-action">Bài 3 + 4: ProductController</a>
+      </div>
+
+      <div class="card border-dark shadow-sm rounded-3">
+        <div class="card-header bg-dark text-white">
+          Bài 5: ResultController
+        </div>
+        <div class="card-body">
+          <div class="btn-group w-100" role="group">
+            <a href="/a" class="btn btn-outline-primary">Trang A</a>
+            <a href="/b" class="btn btn-outline-success">Trang B</a>
+            <a href="/c" class="btn btn-outline-warning">Trang C</a>
+            <a href="/d" class="btn btn-outline-danger">Trang D</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
