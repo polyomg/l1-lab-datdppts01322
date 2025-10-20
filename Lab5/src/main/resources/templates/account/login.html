@@ -1,0 +1,15 @@
+<form action="/account/login" method="post">
+  <input name="username" placeholder="Username">
+  <input name="password" placeholder="Password" type="password">
+  <label><input type="checkbox" name="remember" value="true"> Remember me</label>
+  <button>Login</button>
+<p th:if="${session.username != null}">
+    ✅ Đăng nhập thành công! Xin chào <b th:text="${session.username}"></b>.
+</p>
+
+<p th:if="${session.username == null}">
+    ❌ Chưa đăng nhập hoặc sai thông tin!
+</p>
+
+</form>
+
